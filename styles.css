@@ -748,6 +748,16 @@ section:nth-child(even) {
   border-radius: 100px;
   font-weight: 500;
 }
+.info-badge-mobility {
+  display: inline-block;
+  font-size: .8rem;
+  color: var(--accent);
+  background: rgba(0,200,224,.08);
+  border: 1px solid rgba(0,200,224,.2);
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-weight: 500;
+}
 .info-badge-done {
   display: inline-block;
   font-size: .8rem;
