@@ -736,6 +736,114 @@ section:nth-child(even) {
 .cert-card--other { opacity: .7; }
 
 /* =============================================
+   INFO BADGE — TITULACIÓN PENDIENTE
+   ============================================= */
+.info-badge-soon {
+  display: inline-block;
+  font-size: .8rem;
+  color: var(--accent2);
+  background: rgba(240,165,0,.1);
+  border: 1px solid rgba(240,165,0,.25);
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+/* =============================================
+   CREDENCIALES DESCARGABLES
+   ============================================= */
+.creds-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 40px 0 20px;
+  color: var(--text-muted);
+}
+.creds-subtitle .accent { color: var(--accent); }
+
+.creds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.cred-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  color: var(--text);
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  cursor: pointer;
+}
+.cred-card:hover {
+  border-color: rgba(0,200,224,.35);
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+  color: var(--text);
+}
+.cred-card--pending {
+  cursor: default;
+  opacity: .75;
+  border-style: dashed;
+}
+.cred-card--pending:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border);
+}
+
+.cred-icon {
+  flex-shrink: 0;
+  color: var(--accent2);
+  display: flex;
+}
+.cred-card--pending .cred-icon { color: var(--text-dim); }
+
+.cred-body { flex: 1; min-width: 0; }
+.cred-label {
+  font-size: .68rem;
+  font-family: var(--mono);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  display: block;
+  margin-bottom: 2px;
+}
+.cred-card--pending .cred-label { color: var(--text-dim); }
+.cred-body h4 {
+  font-size: .88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1px;
+}
+.cred-body p {
+  font-size: .75rem;
+  color: var(--text-muted);
+}
+
+.cred-status {
+  flex-shrink: 0;
+  font-size: .7rem;
+  font-family: var(--mono);
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(0,200,224,.1);
+  color: var(--accent);
+  border: 1px solid rgba(0,200,224,.2);
+}
+.cred-status--soon {
+  background: rgba(240,165,0,.1);
+  color: var(--accent2);
+  border-color: rgba(240,165,0,.2);
+}
+
+/* =============================================
    CONTACTO
    ============================================= */
 #contacto { text-align: center; }
@@ -871,6 +979,7 @@ footer p {
   #hero h1 { font-size: 2.4rem; }
   .hero-stats { padding: 24px; }
   .skills-cats { grid-template-columns: 1fr; }
+  .creds-grid { grid-template-columns: 1fr; }
   .contact-cards { flex-direction: column; align-items: center; }
   .contact-card { width: 100%; max-width: 360px; }
 }
