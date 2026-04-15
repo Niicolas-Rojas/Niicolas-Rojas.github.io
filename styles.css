@@ -250,6 +250,20 @@ section:nth-child(even) {
   position: relative;
   width: 280px; height: 280px;
 }
+.photo-fallback {
+  display: none;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--border);
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -2px;
+  box-shadow: var(--glow);
+}
 .photo-ring {
   position: absolute;
   inset: -8px;
@@ -491,56 +505,59 @@ section:nth-child(even) {
 /* =============================================
    HABILIDADES
    ============================================= */
-.skills-grid {
+.skills-cats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.skill-group {
+.skill-cat {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 24px;
+  transition: border-color .2s;
 }
+.skill-cat:hover { border-color: rgba(0,200,224,.25); }
 
-.skill-group-title {
-  font-size: .82rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--accent2);
-  margin-bottom: 20px;
+.skill-cat-header {
   display: flex;
   align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.skill-cat-icon {
+  color: var(--accent2);
+  flex-shrink: 0;
+  display: flex;
+}
+.skill-cat-title {
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
-.skill-icon { color: var(--accent2); }
-
-.skill-items { display: flex; flex-direction: column; gap: 14px; }
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.skill-name {
-  font-size: .85rem;
-  color: var(--text-muted);
+.sbadge {
+  padding: 5px 12px;
+  background: rgba(0,200,224,.06);
+  border: 1px solid rgba(0,200,224,.18);
+  color: var(--accent);
+  border-radius: 100px;
+  font-size: .8rem;
   font-weight: 500;
+  white-space: nowrap;
+  transition: background .2s, border-color .2s;
 }
-.skill-bar {
-  height: 4px;
-  background: var(--border);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.skill-fill {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(to right, var(--accent), #40d8ee);
-  border-radius: 2px;
-  transition: width 1s cubic-bezier(.4,0,.2,1);
+.sbadge:hover {
+  background: rgba(0,200,224,.14);
+  border-color: rgba(0,200,224,.35);
 }
 
 /* =============================================
@@ -632,6 +649,62 @@ section:nth-child(even) {
 }
 
 /* =============================================
+   MINING CALLOUT
+   ============================================= */
+.mining-callout {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: linear-gradient(135deg, rgba(240,165,0,.07) 0%, rgba(240,165,0,.03) 100%);
+  border: 1px solid rgba(240,165,0,.3);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 36px;
+}
+.mc-left { flex-shrink: 0; }
+.mc-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(240,165,0,.12);
+  border: 1px solid rgba(240,165,0,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent2);
+}
+.mc-body { flex: 1; }
+.mc-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent2);
+  margin-bottom: 6px;
+}
+.mc-body p {
+  font-size: .88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.mc-stat-block {
+  flex-shrink: 0;
+  text-align: center;
+  padding-left: 28px;
+  border-left: 1px solid rgba(240,165,0,.2);
+}
+.mc-num {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent2);
+  font-family: var(--mono);
+  line-height: 1;
+}
+.mc-label {
+  font-size: .72rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* =============================================
    CERTIFICACIONES
    ============================================= */
 .certs-grid {
@@ -652,13 +725,15 @@ section:nth-child(even) {
   color: var(--text-muted);
   transition: border-color .2s;
 }
-.cert-card:hover { border-color: rgba(240,165,0,.3); }
+.cert-card:hover { border-color: rgba(240,165,0,.3); color: var(--text); }
 .cert-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--accent2);
   flex-shrink: 0;
 }
+.cert-dot--dim { background: var(--text-dim); }
+.cert-card--other { opacity: .7; }
 
 /* =============================================
    CONTACTO
@@ -746,8 +821,19 @@ footer p {
   .about-grid {
     grid-template-columns: 1fr;
   }
-  .skills-grid {
-    grid-template-columns: 1fr;
+  .skills-cats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mining-callout {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mc-stat-block {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(240,165,0,.2);
+    width: 100%;
   }
   .projects-grid {
     grid-template-columns: 1fr;
@@ -784,6 +870,7 @@ footer p {
   #hero { padding: 90px 24px 40px; }
   #hero h1 { font-size: 2.4rem; }
   .hero-stats { padding: 24px; }
+  .skills-cats { grid-template-columns: 1fr; }
   .contact-cards { flex-direction: column; align-items: center; }
   .contact-card { width: 100%; max-width: 360px; }
 }

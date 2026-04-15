@@ -32,8 +32,9 @@
       <div class="hero-text">
         <p class="hero-tag"><span class="dot"></span> Disponible para nuevas oportunidades</p>
         <h1>Nicolás<br /><span class="accent">Rojas Díaz</span></h1>
-        <p class="hero-subtitle">Ingeniero Civil en Informática<br />
-          <span class="mono">Data Engineering · ETL · SQL · Power BI · Mining Tech</span>
+        <p class="hero-subtitle">
+          Ingeniero de Datos con <strong>formación específica en industria minera</strong>.<br />
+          Diseño pipelines de datos, dashboards operacionales y sistemas que apoyan la toma de decisiones en entornos críticos.
         </p>
         <div class="hero-ctas">
           <a href="#proyectos" class="btn-primary">Ver proyectos</a>
@@ -42,7 +43,9 @@
       </div>
       <div class="hero-photo-wrap">
         <div class="photo-ring"></div>
-        <img src="assets/foto.jpg" alt="Nicolás Rojas Díaz" class="hero-photo" />
+        <img src="assets/Foto_Perfil.jpeg" alt="Nicolás Rojas Díaz" class="hero-photo"
+             onerror="this.style.display='none';this.parentElement.querySelector('.photo-fallback').style.display='flex';" />
+        <div class="photo-fallback">NR</div>
         <div class="photo-badge">
           <span class="badge-icon">&#9670;</span>
           <span>Data Engineer</span>
@@ -199,53 +202,78 @@
   <!-- HABILIDADES -->
   <section id="habilidades">
     <div class="container">
-      <h2 class="section-title">Stack <span class="accent">Tecnológico</span></h2>
-      <div class="skills-grid">
+      <h2 class="section-title">Herramientas <span class="accent">&amp; Tecnologías</span></h2>
+      <div class="skills-cats">
 
-        <div class="skill-group">
-          <h4 class="skill-group-title">
-            <span class="skill-icon">&#9642;</span> Gestión de Datos
-          </h4>
-          <div class="skill-items">
-            <div class="skill-item"><span class="skill-name">SQL Server</span><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">PostgreSQL</span><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">MySQL</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">ETL / Pipelines</span><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div></div>
+        <div class="skill-cat">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+            </span>
+            <h4 class="skill-cat-title">Bases de Datos</h4>
+          </div>
+          <div class="skill-badges">
+            <span class="sbadge">SQL Server</span>
+            <span class="sbadge">PostgreSQL</span>
+            <span class="sbadge">MySQL</span>
           </div>
         </div>
 
-        <div class="skill-group">
-          <h4 class="skill-group-title">
-            <span class="skill-icon">&#9642;</span> Visualización & BI
-          </h4>
-          <div class="skill-items">
-            <div class="skill-item"><span class="skill-name">Power BI</span><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">Tableau</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">Python (Pandas / NumPy)</span><div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">R</span><div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div></div>
+        <div class="skill-cat">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </span>
+            <h4 class="skill-cat-title">Datos &amp; Automatización</h4>
+          </div>
+          <div class="skill-badges">
+            <span class="sbadge">Python</span>
+            <span class="sbadge">ETL / Pipelines</span>
+            <span class="sbadge">Data Lake</span>
+            <span class="sbadge">R</span>
+            <span class="sbadge">OCR</span>
           </div>
         </div>
 
-        <div class="skill-group">
-          <h4 class="skill-group-title">
-            <span class="skill-icon">&#9642;</span> Desarrollo
-          </h4>
-          <div class="skill-items">
-            <div class="skill-item"><span class="skill-name">Go (Golang)</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">Node.js</span><div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">Flask / Python</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">REST APIs</span><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div></div>
+        <div class="skill-cat">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </span>
+            <h4 class="skill-cat-title">Visualización &amp; BI</h4>
+          </div>
+          <div class="skill-badges">
+            <span class="sbadge">Power BI</span>
+            <span class="sbadge">Tableau</span>
           </div>
         </div>
 
-        <div class="skill-group">
-          <h4 class="skill-group-title">
-            <span class="skill-icon">&#9642;</span> Infraestructura
-          </h4>
-          <div class="skill-items">
-            <div class="skill-item"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">Linux</span><div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div></div>
-            <div class="skill-item"><span class="skill-name">Git / GitHub</span><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div></div>
+        <div class="skill-cat">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <h4 class="skill-cat-title">Desarrollo de Software</h4>
+          </div>
+          <div class="skill-badges">
+            <span class="sbadge">Go</span>
+            <span class="sbadge">Node.js</span>
+            <span class="sbadge">Flask</span>
+            <span class="sbadge">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
+            <h4 class="skill-cat-title">Infraestructura</h4>
+          </div>
+          <div class="skill-badges">
+            <span class="sbadge">Docker</span>
+            <span class="sbadge">Linux</span>
+            <span class="sbadge">Git / GitHub</span>
           </div>
         </div>
 
@@ -306,7 +334,27 @@
   <!-- CERTIFICACIONES -->
   <section id="certificaciones">
     <div class="container">
-      <h2 class="section-title">Certificaciones <span class="accent">&amp; Otros</span></h2>
+      <h2 class="section-title">Formación <span class="accent">Minera</span></h2>
+
+      <div class="mining-callout">
+        <div class="mc-left">
+          <div class="mc-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M6 20V10l6-6 6 6v10M10 20v-5h4v5"/></svg>
+          </div>
+        </div>
+        <div class="mc-body">
+          <h3>Conocimiento en Industria Minera</h3>
+          <p>
+            Combino expertise técnico en datos con formación específica en operaciones, planificación y
+            gestión del negocio minero. Entiendo el contexto operacional donde se generan y usan los datos.
+          </p>
+        </div>
+        <div class="mc-stat-block">
+          <span class="mc-num">6</span>
+          <span class="mc-label">Certificaciones<br />mineras</span>
+        </div>
+      </div>
+
       <div class="certs-grid">
         <div class="cert-card">
           <span class="cert-dot"></span>
@@ -332,8 +380,8 @@
           <span class="cert-dot"></span>
           <span>Minería Cielo Abierto</span>
         </div>
-        <div class="cert-card">
-          <span class="cert-dot"></span>
+        <div class="cert-card cert-card--other">
+          <span class="cert-dot cert-dot--dim"></span>
           <span>Licencia de Conducir Clase B</span>
         </div>
       </div>
@@ -364,6 +412,15 @@
             <p class="cc-value">Niicolas-Rojas</p>
           </div>
         </a>
+        <a href="https://www.linkedin.com/in/nicol%C3%A1s-rojas-d%C3%ADaz" class="contact-card" target="_blank">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div>
+            <p class="cc-label">LinkedIn</p>
+            <p class="cc-value">Nicolás Rojas Díaz</p>
+          </div>
+        </a>
         <a href="tel:+56949343967" class="contact-card">
           <div class="cc-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.28-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -392,18 +449,6 @@
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
-
-    // Animate skill bars on intersection
-    const bars = document.querySelectorAll('.skill-fill');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.width = e.target.style.getPropertyValue('--w');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    bars.forEach(b => { b.style.width = '0'; observer.observe(b); });
   </script>
 
 </body>
