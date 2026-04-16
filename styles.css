@@ -507,7 +507,7 @@ section:nth-child(even) {
    ============================================= */
 .skills-cats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -814,6 +814,14 @@ section:nth-child(even) {
   box-shadow: none;
   border-color: var(--border);
 }
+.cred-card--no-dl {
+  cursor: default;
+}
+.cred-card--no-dl:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border);
+}
 
 .cred-icon {
   flex-shrink: 0;
@@ -948,9 +956,6 @@ footer p {
 @media (max-width: 900px) {
   .about-grid {
     grid-template-columns: 1fr;
-  }
-  .skills-cats {
-    grid-template-columns: repeat(2, 1fr);
   }
   .mining-callout {
     flex-direction: column;
