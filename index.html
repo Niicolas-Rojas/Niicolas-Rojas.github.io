@@ -616,15 +616,27 @@
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Pre-warm Render API on page load so it's ready when visitors click the demo
-    window.addEventListener('load', () => {
-      const apis = [
+    // Wake-up: pinga todos los servicios al cargar el portafolio para que
+    // estén activos cuando el visitante haga clic en "Ver demo".
+    // Usar mode:'no-cors' evita bloqueos CORS; el objetivo es solo disparar
+    // la petición, no leer la respuesta.
+    (function wakeServices() {
+      const SERVICES = [
+        // ── Streamlit apps ────────────────────────────────────────────────
+        'https://copper-analytics-chile.streamlit.app/',
+        // 'https://mining-realtime-platform.streamlit.app/',  // agregar cuando esté desplegado
+        // 'https://predict-mining.streamlit.app/',            // agregar cuando esté desplegado
+
+        // ── Render backends (endpoint /health) ───────────────────────────
+        'https://mining-api-4dp3.onrender.com/health',
         'https://predict-mining.onrender.com/health',
       ];
-      apis.forEach(url => {
-        fetch(url, { mode: 'no-cors', cache: 'no-store' }).catch(() => {});
+
+      SERVICES.forEach(function(url) {
+        fetch(url, { method: 'GET', mode: 'no-cors', cache: 'no-cache' })
+          .catch(function() {});
       });
-    });
+    })();
   </script>
 
 </body>
