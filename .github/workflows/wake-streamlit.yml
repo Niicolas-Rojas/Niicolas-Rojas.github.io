@@ -1,0 +1,128 @@
+name: wake-streamlit-apps
+
+on:
+  schedule:
+    # Run every 6 hours. Streamlit Community Cloud hibernates public apps
+    # after 12 hours without viewer traffic.
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wake-streamlit-apps
+  cancel-in-progress: false
+
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install --save-dev playwright
+          npx playwright install --with-deps chromium
+
+      - name: Wake Streamlit apps with a real browser
+        run: |
+          node <<'NODE'
+          const { chromium } = require('playwright');
+
+          const apps = [
+            {
+              name: 'ETL Mineria Chile',
+              url: 'https://copper-analytics-chile.streamlit.app/',
+            },
+            {
+              name: 'Mining Realtime Platform',
+              url: 'https://mining-realtime-platform.streamlit.app/',
+            },
+            {
+              name: 'Predict Mining',
+              url: 'https://predict-mining-dxz2hfe6p8seukxxgetcgq.streamlit.app/',
+            },
+          ];
+
+          const wakePatterns = [
+            /yes,\s*get this app back up/i,
+            /get this app back up/i,
+          ];
+
+          async function clickWakeButton(page) {
+            for (const pattern of wakePatterns) {
+              const button = page.getByRole('button', { name: pattern });
+              if (await button.isVisible({ timeout: 5000 }).catch(() => false)) {
+                await button.click();
+                return true;
+              }
+            }
+            return false;
+          }
+
+          async function waitForApp(page) {
+            await page.waitForLoadState('domcontentloaded', { timeout: 90000 }).catch(() => {});
+            await page.waitForLoadState('networkidle', { timeout: 120000 }).catch(() => {});
+            await page.waitForTimeout(5000);
+          }
+
+          async function inspectSleepingState(page) {
+            const sleepingText = page.getByText(/has gone to sleep due to inactivity/i);
+            const zzzzText = page.getByText(/zzzz/i);
+            const sleeping = await sleepingText.isVisible({ timeout: 3000 }).catch(() => false);
+            const zzzz = await zzzzText.isVisible({ timeout: 3000 }).catch(() => false);
+            return sleeping || zzzz;
+          }
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const failures = [];
+
+            for (const app of apps) {
+              const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+
+              try {
+                const response = await page.goto(app.url, {
+                  waitUntil: 'domcontentloaded',
+                  timeout: 120000,
+                });
+
+                const clickedWake = await clickWakeButton(page);
+                if (clickedWake) {
+                  await waitForApp(page);
+                }
+
+                const stillSleeping = await inspectSleepingState(page);
+                const title = await page.title().catch(() => '');
+                const status = response ? response.status() : 'no-response';
+
+                console.log(`${app.name}: status=${status} clicked_wake=${clickedWake} still_sleeping=${stillSleeping} title="${title}"`);
+
+                if (stillSleeping) {
+                  failures.push(`${app.name} still shows the Streamlit sleeping page`);
+                }
+              } catch (error) {
+                failures.push(`${app.name}: ${error.message}`);
+              } finally {
+                await page.close();
+              }
+            }
+
+            await browser.close();
+
+            if (failures.length > 0) {
+              console.error('Wake-up failed:');
+              for (const failure of failures) {
+                console.error(`- ${failure}`);
+              }
+              process.exit(1);
+            }
+          })();
+          NODE

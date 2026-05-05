@@ -350,10 +350,10 @@
           <ul class="project-points">
             <li>Pipeline IoT completo: MQTT broker → ingesta → transformación → PostgreSQL → dashboard.</li>
             <li>Arquitectura medallion (Bronze/Silver/Gold) ejecutada por GitHub Actions lunes y jueves.</li>
-            <li>Dashboard Streamlit con métricas en vivo y alertas de calidad de datos.</li>
+            <li>Dashboard Streamlit y observabilidad con Prometheus/Grafana para latencia, throughput y calidad.</li>
           </ul>
           <div class="project-techs">
-            <span>Python</span><span>MQTT</span><span>PostgreSQL</span><span>Streamlit</span><span>Docker</span><span>GitHub Actions</span>
+            <span>Python</span><span>MQTT</span><span>PostgreSQL</span><span>FastAPI</span><span>Streamlit</span><span>Grafana</span><span>GitHub Actions</span>
           </div>
           <div class="project-actions">
             <a href="https://mining-realtime-platform.streamlit.app/" class="project-cta project-cta--primary" target="_blank">
@@ -616,7 +616,7 @@
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Wake-up: los dashboards Streamlit se mantienen activos con UptimeRobot.
+    // Wake-up: los dashboards Streamlit se despiertan con GitHub Actions + Playwright.
     // Este bloque despierta solo backends Render cuando alguien visita el portafolio.
     // Usar mode:'no-cors' evita bloqueos CORS; el objetivo es solo disparar
     // la petición, no leer la respuesta.

@@ -22,7 +22,10 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   background: var(--bg);
@@ -31,8 +34,10 @@ body {
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
+p, h1, h2, h3, li, a, span { overflow-wrap: break-word; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: #40d8ee; }
 
@@ -102,7 +107,7 @@ section:nth-child(even) {
 .nav-logo {
   font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: -.5px;
+  letter-spacing: 0;
   margin-right: auto;
 }
 
@@ -206,7 +211,7 @@ section:nth-child(even) {
   font-weight: 700;
   line-height: 1.05;
   margin-bottom: 20px;
-  letter-spacing: -1.5px;
+  letter-spacing: 0;
 }
 
 .hero-subtitle {
@@ -261,7 +266,7 @@ section:nth-child(even) {
   font-size: 3rem;
   font-weight: 700;
   color: var(--accent);
-  letter-spacing: -2px;
+  letter-spacing: 0;
   box-shadow: var(--glow);
 }
 .photo-ring {
@@ -1060,11 +1065,35 @@ footer p {
 }
 
 @media (max-width: 640px) {
+  #navbar { padding: 0 16px; }
+  .nav-inner {
+    gap: 12px;
+    height: 60px;
+  }
   .nav-links { display: none; }
+  .btn-nav {
+    padding: 7px 12px;
+    max-width: 148px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .78rem;
+  }
   section { padding: 64px 0; }
-  #hero { padding: 90px 24px 40px; }
-  #hero h1 { font-size: 2.4rem; }
-  .hero-stats { padding: 24px; }
+  #hero { padding: 84px 20px 40px; }
+  #hero h1 { font-size: clamp(2.25rem, 11vw, 2.7rem); }
+  .hero-inner { gap: 36px; }
+  .hero-tag {
+    max-width: 100%;
+    white-space: normal;
+    justify-content: center;
+    line-height: 1.45;
+  }
+  .hero-subtitle { font-size: .95rem; }
+  .hero-ctas { width: 100%; }
+  .btn-primary,
+  .btn-ghost { flex: 1 1 140px; padding: 14px 18px; text-align: center; }
+  .photo-badge { right: 50%; transform: translateX(50%); }
+  .hero-stats { width: 100%; max-width: 100%; padding: 24px; }
   .skills-cats { grid-template-columns: 1fr; }
   .creds-grid { grid-template-columns: 1fr; }
   .contact-cards { flex-direction: column; align-items: center; }
