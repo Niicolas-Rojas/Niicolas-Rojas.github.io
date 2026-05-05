@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nicolás Rojas Díaz — Data Engineer</title>
-  <meta name="description" content="Portafolio de Nicolás Rojas Díaz, Ingeniero de Datos y Software con experiencia en ETL, backend, PostgreSQL, dashboards y soluciones desplegadas en producción." />
+  <title>Nicolás Rojas Díaz — Data Engineering &amp; TI</title>
+  <meta name="description" content="Portafolio de Nicolás Rojas Díaz, Ingeniero Civil en Informática con mención en Tecnología de la Información, orientado a Data Engineering, ETL, backend, PostgreSQL, dashboards y soluciones desplegadas en producción." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,7 +34,7 @@
         <p class="hero-tag"><span class="dot"></span> Disponible para nuevas oportunidades</p>
         <h1>Nicolás<br /><span class="accent">Rojas Díaz</span></h1>
         <p class="hero-subtitle">
-          Ingeniero de Datos y Software con foco en soluciones <strong>end-to-end</strong>.<br />
+          Ingeniero Civil en Informática, mención Tecnología de la Información, con foco en soluciones <strong>end-to-end</strong> de datos.<br />
           Desarrollo pipelines ETL, backend, bases de datos relacionales y dashboards orientados a operación y análisis.
         </p>
         <div class="hero-ctas">
@@ -56,7 +56,7 @@
     <div class="hero-stats">
       <div class="stat">
         <span class="stat-num">2025</span>
-        <span class="stat-label">Titulado en Ingeniería Civil en Informática</span>
+        <span class="stat-label">Ing. Civil en Informática, mención TI</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
@@ -80,8 +80,8 @@
           <p>
             Diseño e implemento infraestructura de datos completa: pipelines ETL, modelado en bases de datos
             relacionales y reportes ejecutivos que apoyan decisiones estratégicas. Titulado en Ingeniería Civil
-            en Informática por la <strong>Universidad Católica de Temuco</strong> (2025), con experiencia
-            comprobada en proyectos de datos en producción.
+            en Informática, mención Tecnología de la Información, por la <strong>Universidad Católica de Temuco</strong>
+            (2025), con experiencia comprobada en proyectos de datos en producción.
           </p>
           <p>
             Complemento el perfil de datos con experiencia en desarrollo backend y despliegue de software,
@@ -103,7 +103,7 @@
           <ul class="info-list">
             <li>
               <span class="info-label">Carrera</span>
-              <span>Ing. Civil en Informática</span>
+              <span>Ing. Civil en Informática, mención TI</span>
             </li>
             <li>
               <span class="info-label">Universidad</span>
@@ -396,8 +396,8 @@
             <a href="https://predict-mining-dxz2hfe6p8seukxxgetcgq.streamlit.app/" class="project-cta project-cta--primary" target="_blank">
               Ver demo →
             </a>
-            <a href="https://predict-mining.onrender.com/docs" class="project-cta" target="_blank">
-              Ver API →
+            <a href="https://github.com/Niicolas-Rojas/predict-mining" class="project-cta" target="_blank">
+              Ver repositorio →
             </a>
           </div>
         </div>
@@ -461,7 +461,7 @@
           </div>
           <div class="cred-body">
             <span class="cred-label">Título Universitario</span>
-            <h4>Ing. Civil en Informática</h4>
+            <h4>Ing. Civil en Informática, mención TI</h4>
             <p>UC Temuco · 2025</p>
           </div>
           <span class="cred-status">PDF</span>
@@ -616,18 +616,12 @@
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Wake-up: pinga todos los servicios al cargar el portafolio para que
-    // estén activos cuando el visitante haga clic en "Ver demo".
+    // Wake-up: los dashboards Streamlit se mantienen activos con UptimeRobot.
+    // Este bloque despierta solo backends Render cuando alguien visita el portafolio.
     // Usar mode:'no-cors' evita bloqueos CORS; el objetivo es solo disparar
     // la petición, no leer la respuesta.
     (function wakeServices() {
       const SERVICES = [
-        // ── Streamlit apps ────────────────────────────────────────────────
-        'https://copper-analytics-chile.streamlit.app/',
-        // 'https://mining-realtime-platform.streamlit.app/',  // agregar cuando esté desplegado
-        // 'https://predict-mining.streamlit.app/',            // agregar cuando esté desplegado
-
-        // ── Render backends (endpoint /health) ───────────────────────────
         'https://mining-api-4dp3.onrender.com/health',
         'https://predict-mining.onrender.com/health',
       ];
