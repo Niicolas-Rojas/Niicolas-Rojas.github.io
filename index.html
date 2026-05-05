@@ -78,13 +78,13 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            Diseño e implemento infraestructura de datos completa: pipelines ETL, modelado en bases de datos
-            relacionales y reportes ejecutivos que apoyan decisiones estratégicas. Titulado en Ingeniería Civil
+            Diseño e implemento soluciones de datos de extremo a extremo: pipelines ETL, modelado en bases de datos
+            relacionales y reportes ejecutivos que apoyan la toma de decisiones. Titulado en Ingeniería Civil
             en Informática, mención Tecnología de la Información, por la <strong>Universidad Católica de Temuco</strong>
-            (2025), con experiencia comprobada en proyectos de datos en producción.
+            (2025), con experiencia en proyectos de datos, backend y plataformas web en producción.
           </p>
           <p>
-            Complemento el perfil de datos con experiencia en desarrollo backend y despliegue de software,
+            Complemento el perfil de datos con desarrollo backend, despliegue de software y trabajo full stack,
             lo que me permite participar en soluciones completas, desde la ingestión y modelado hasta la
             entrega final para usuarios. Además, cuento con conocimiento aplicado del contexto operacional minero.
           </p>
@@ -142,19 +142,21 @@
           <div class="tl-date">Dic 2025 — Actualidad</div>
           <div class="tl-card">
             <div class="tl-header">
-              <h3>Ingeniero de Software Fullstack</h3>
+              <h3>Ingeniero de Software Fullstack / Líder Técnico</h3>
               <span class="tl-company">Nissi Advisor SPA</span>
             </div>
             <p>
               Desarrollo e implementación de una plataforma tecnológica para la administración operacional
               de gimnasios. Inicié este desarrollo en <strong>diciembre de 2025</strong> y la plataforma
-              se encuentra <strong>en producción desde febrero de 2026</strong>. Responsable del backend
+              se encuentra <strong>en producción desde febrero de 2026</strong>. Actualmente sigo desarrollando
+              la plataforma web y asumí responsabilidades de liderazgo técnico: supervisión, revisión de criterios
+              de implementación y toma de decisiones para la futura aplicación móvil. Responsable del backend
               en <strong>Go</strong> desplegado en <strong>AWS sobre Ubuntu Linux</strong>,
               del frontend publicado en <strong>Cloudflare Workers</strong> y de la capa de datos en
               <strong>PostgreSQL sobre DigitalOcean</strong>.
             </p>
             <div class="tl-techs">
-              <span>Go</span><span>Next.js</span><span>PostgreSQL</span><span>AWS</span><span>Cloudflare Workers</span><span>DigitalOcean</span>
+              <span>Go</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>AWS</span><span>Cloudflare Workers</span><span>Liderazgo técnico</span>
             </div>
           </div>
         </div>
@@ -249,6 +251,8 @@
           <div class="skill-badges">
             <span class="sbadge">Power BI</span>
             <span class="sbadge">Tableau</span>
+            <span class="sbadge">Streamlit</span>
+            <span class="sbadge">Grafana</span>
           </div>
         </div>
 
@@ -261,8 +265,10 @@
           </div>
           <div class="skill-badges">
             <span class="sbadge">Go</span>
-            <span class="sbadge">Node.js</span>
-            <span class="sbadge">Flask</span>
+            <span class="sbadge">FastAPI</span>
+            <span class="sbadge">Next.js</span>
+            <span class="sbadge">TypeScript</span>
+            <span class="sbadge">React</span>
             <span class="sbadge">REST APIs</span>
           </div>
         </div>
@@ -278,6 +284,9 @@
             <span class="sbadge">Docker</span>
             <span class="sbadge">Linux</span>
             <span class="sbadge">Git / GitHub</span>
+            <span class="sbadge">GitHub Actions</span>
+            <span class="sbadge">Cloudflare Workers</span>
+            <span class="sbadge">AWS</span>
           </div>
         </div>
 
@@ -316,7 +325,7 @@
             <li>Enfocado en series históricas de producción minera y precio del cobre.</li>
           </ul>
           <div class="project-techs">
-            <span>Python</span><span>PostgreSQL</span><span>Airflow</span><span>dbt</span><span>Streamlit</span><span>Docker</span>
+            <span>Python</span><span>PostgreSQL</span><span>Airflow</span><span>dbt</span><span>Streamlit</span><span>Plotly</span><span>Docker</span>
           </div>
           <div class="project-actions">
             <a href="https://copper-analytics-chile.streamlit.app/" class="project-cta project-cta--primary" target="_blank">
@@ -353,7 +362,7 @@
             <li>Dashboard Streamlit y observabilidad con Prometheus/Grafana para latencia, throughput y calidad.</li>
           </ul>
           <div class="project-techs">
-            <span>Python</span><span>MQTT</span><span>PostgreSQL</span><span>FastAPI</span><span>Streamlit</span><span>Grafana</span><span>GitHub Actions</span>
+            <span>Python</span><span>MQTT</span><span>PostgreSQL</span><span>FastAPI</span><span>Streamlit</span><span>Prometheus</span><span>Grafana</span><span>GitHub Actions</span>
           </div>
           <div class="project-actions">
             <a href="https://mining-realtime-platform.streamlit.app/" class="project-cta project-cta--primary" target="_blank">
@@ -380,14 +389,14 @@
           <span class="project-kicker">Machine learning predictivo con demo pública</span>
           <h3 class="project-title">Predictive Mining Maintenance</h3>
           <p class="project-desc">
-            Modelo XGBoost que predice si un equipo industrial fallará en las próximas 24 horas,
-            con anticipación mediana de 24h y 98% de fallas detectadas con ≥12h de aviso.
-            Incluye API REST desplegada y dashboard con explicabilidad SHAP.
+            Modelo XGBoost para estimar riesgo de falla en equipos industriales usando el dataset
+            Azure Predictive Maintenance. Incluye entrenamiento reproducible, API REST desplegada
+            y dashboard con explicabilidad SHAP para revisar las variables que influyen en el riesgo.
           </p>
           <ul class="project-points">
             <li>Feature engineering sobre 876.000 lecturas horarias: rolling stats, errores y mantención.</li>
-            <li>Recall 99.6% — solo 17 fallas no detectadas de 4.050 en el set de test.</li>
-            <li>SHAP explainability: identifica que los errores no críticos predicen fallas 24h antes.</li>
+            <li>Evaluación de benchmark con foco en recall, anticipación de fallas y métricas de negocio.</li>
+            <li>SHAP explainability: identifica señales tempranas asociadas a mayor probabilidad de falla.</li>
           </ul>
           <div class="project-techs">
             <span>Python</span><span>XGBoost</span><span>SHAP</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span>
@@ -410,17 +419,17 @@
           <span class="project-kicker">Plataforma privada en producción</span>
           <h3 class="project-title">Nissi Gym Platform</h3>
           <p class="project-desc">
-            Plataforma full stack para la administración operacional de gimnasios. Proyecto iniciado en
-            diciembre de 2025 y en producción desde febrero de 2026. Participé en el desarrollo del backend
-            en Go, el frontend en Next.js y la arquitectura de despliegue para operación real.
+            Plataforma full stack para la administración operacional de gimnasios. Sigo desarrollando
+            la web en producción y actualmente también cumplo un rol de liderazgo técnico, supervisando
+            criterios de implementación y decisiones relevantes para la futura aplicación móvil.
           </p>
           <ul class="project-points">
-            <li>Backend REST desplegado en una instancia AWS con Ubuntu Linux.</li>
-            <li>Frontend desplegado en Cloudflare Workers para distribución y acceso web.</li>
-            <li>Base de datos PostgreSQL alojada en DigitalOcean para la capa transaccional.</li>
+            <li>Backend REST en Go y frontend web en Next.js para operación diaria del gimnasio.</li>
+            <li>Supervisión técnica de una segunda línea de desarrollo orientada a app móvil.</li>
+            <li>Despliegue con AWS, Cloudflare Workers y PostgreSQL en DigitalOcean.</li>
           </ul>
           <div class="project-techs">
-            <span>Go</span><span>Next.js</span><span>PostgreSQL</span><span>AWS</span><span>Cloudflare Workers</span><span>DigitalOcean</span>
+            <span>Go</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>AWS</span><span>Cloudflare Workers</span><span>DigitalOcean</span>
           </div>
           <span class="project-cta project-cta--private">Proyecto privado</span>
         </div>
